@@ -6,8 +6,8 @@ const router = express.Router();
 
 router.get('/', (req, res,next) => {
   movieModel.
-  then(movies => res.status(200).send(movies))
-  .catch((error) => next(error));;
+  find().then(movies => res.status(200).send(movies))
+  .catch(next);
 });
 
 router.get('/:id', (req, res, next) => {
